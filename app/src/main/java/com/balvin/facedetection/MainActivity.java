@@ -15,9 +15,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FaceDetection faceDetection= new FaceDetection(this);
+        FaceDetection faceDetection= new FaceDetection(this,"");
 
-        faceDetection.call();
+        faceDetection.getLiveNess();
 
 
 

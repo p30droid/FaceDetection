@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top|center|fill_vertical"
+    android:layoutDirection="ltr"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/mainpanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:gravity="fill_vertical|top"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/Pnl1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/VoiceCloseFrame"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="1dp"
+                android:onClick="onclick_VoiceFrameClose"
+                android:scaleType="fitXY"
+                android:src="@drawable/btnback" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:color="#FFFFFF"
+                android:gravity="center"
+                android:keepScreenOn="true"
+                android:text="Recording voice"
+                android:textColor="#090563"
+                android:textSize="30sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/Pnl2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/Pnl1">
+
+            <TextView
+                android:id="@+id/textshow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:color="#FFFFFF"
+                android:gravity="center"
+                android:keepScreenOn="true"
+                android:text="10 20 30 40 50 60 70 80"
+                android:textColor="#000000"
+                android:textSize="50sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/Pnl3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Pnl2"
+            android:layout_margin="10dp"
+            android:gravity="center">
+
+            <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerInParent="true"
+                android:layout_margin="10dp"
+                android:progress="0"
+                android:visibility="invisible"
+                app:cpb_background_progressbar_color="#b6bbd8"
+                app:cpb_background_progressbar_width="5dp"
+                app:cpb_progress_direction="to_right"
+                app:cpb_progressbar_color="#d4251c"
+                app:cpb_progressbar_width="10dp"
+                app:cpb_round_border="false" />
+
+            <ImageButton
+                android:id="@+id/btnRecord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/speech_record"
+                android:onClick="onclick_Recorde" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lowerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/mainpanel"
+        android:layout_weight="1"
+        android:background="#FFFFFF"
+        android:gravity="bottom|center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="5dp"
+            android:onClick="onclick_Voicewebsite"
+            android:scaleType="centerInside"
+            android:src="@drawable/plogo" />
+    </RelativeLayout>
+
+</RelativeLayout>

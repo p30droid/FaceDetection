@@ -1,0 +1,112 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/FaceLiveUI"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/Pnl1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/VoiceCloseFrame"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="1dp"
+            android:onClick="onclick_Fragclose"
+            android:scaleType="fitXY"
+            android:src="@drawable/btnback" />
+
+        <TextView
+            android:id="@+id/hinttext"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:visibility="invisible"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="10dp"
+            android:background="#212142"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="لطفاسر خود را طوری تنظیم کنید تا داخل کادر قرار گیرد."
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/AllView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/BottomView"
+        android:layout_below="@id/Pnl1"
+        android:background="#FFFFFF">
+
+        <com.gata.detect_liveface.camera2.fragment.AutoFitTextureView
+            android:id="@+id/cameraView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility="invisible" />
+
+        <FrameLayout
+            android:id="@+id/cameraView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="0dp"
+            android:visibility="invisible" />
+
+<!--        <com.presentid.detect_liveface.CameraGLView-->
+<!--            android:id="@+id/cameraView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:layout_marginTop="0dp"-->
+<!--            android:visibility="invisible" />-->
+
+
+        <LinearLayout
+            android:id="@+id/OvalSurface"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:orientation="vertical" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/BottomView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white">
+
+        <Button
+            android:id="@+id/EditSendButton"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:background="#212142"
+            android:gravity="center"
+            android:onClick="onclick_FragStart"
+            android:padding="10dp"
+            android:text="Start"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="italic" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

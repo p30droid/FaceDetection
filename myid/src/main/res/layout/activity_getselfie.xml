@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.gata.detect_selfie.frm_getSelfie">
+
+    <FrameLayout
+        android:id="@+id/selfiePreview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <ImageView
+        android:id="@+id/ALLImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <RelativeLayout
+        android:id="@+id/Pnl1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/VoiceCloseFrame"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="1dp"
+            android:onClick="onClickCardBack"
+            android:scaleType="fitXY"
+            android:src="@drawable/btnback" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:color="#FFFFFF"
+            android:gravity="center"
+            android:keepScreenOn="true"
+            android:text="Take a selfie"
+            android:textColor="#090563"
+            android:textSize="30sp" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/Pnl2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Pnl1"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+            android:lineSpacingExtra="8dp"
+            android:paddingTop="50dp"
+            android:paddingBottom="0dp"
+            android:text="Hold your face in the oval"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="16dp" />
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/btnTakeSelfie"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:onClick="onclick_Selfie"
+        android:scaleType="center"
+        android:background="#FFFFFF"
+        android:src="@drawable/camera" />
+
+    <RelativeLayout
+        android:id="@+id/Pnl3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:onClick="onclick_Selfiewebsite"
+            android:scaleType="centerInside"
+            android:src="@drawable/plogo" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

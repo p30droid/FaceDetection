@@ -2,24 +2,30 @@ package com.balvin.myid;
 
 import android.app.Activity;
 
+
 import com.gata.othertools.PublicVals;
 import com.gata.gatasdk.Gata_EventListener;
 import com.gata.gatasdk.wrapper_tools;
+
+
 public class FaceDetection {
+
+
 
     static {
         System.loadLibrary("Present");
     }
 
     public static final String SDKKey = Constants.ACTIVATION;
-    private static final boolean getVideoMode=true;
+    private static final boolean getVideoMode = true;
+
+  //  private static final boolean getVideoMode=! PublicVals.getShowLogos();
 
 
-    wrapper_tools gwrapper_tools;
+    wrapper_tools gwrapper_tools = new wrapper_tools();
 
 
-
-    private final Gata_EventListener gGata_EventListener =new Gata_EventListener(){
+    private final Gata_EventListener gGata_EventListener = new Gata_EventListener() {
 
         @Override
         public void onResult(enmResult Value) {
@@ -28,44 +34,46 @@ public class FaceDetection {
     };
 
 
-    public FaceDetection(Activity activity,String token){
+    public FaceDetection(Activity activity, String token) {
 
 
-        gwrapper_tools=new wrapper_tools();
         gwrapper_tools.Gata_INIT(activity, SDKKey, "https://api.presentid.com/api/", gGata_EventListener,
-                "FF9803FC",  "FFFFFFFF", "FF9803FC", "FFFFFFFF", "FFE703FC");
-        PublicVals.a(3);
+                "FF9803FC", "FFFFFFFF", "FF9803FC", "FFFFFFFF", "FFE703FC");
+
+    }
+
+    public void getLiveNess(IMessageListener listener) {
+
+        gwrapper_tools.Show_Wizard(PublicVals.enmWizardForms.frmLiveness, "", "", "", "");
 
 
     }
 
-    public  void getLiveNess(){
 
-        gwrapper_tools.Show_Wizard(PublicVals.enmWizardForms.frmLiveness, "", "","","");
+    public void getCard(IMessageListener listener) {
 
-
-    }
-
-
-    public  void getCard(){
-
-        gwrapper_tools.Show_Wizard(PublicVals.enmWizardForms.frmCard, "", "","","");
+        gwrapper_tools.Show_Wizard(PublicVals.enmWizardForms.frmCard, "", "", "", "");
 
 
     }
 
-    public  void getCardLiveness(){
+    public void getCardLiveness(IMessageListener listener) {
 
-        gwrapper_tools.Show_Wizard(PublicVals.enmWizardForms.frmCardLiveness, "", "","","");
+        gwrapper_tools.Show_Wizard(PublicVals.enmWizardForms.frmCardLiveness, "", "", "", "");
 
 
     }
 
-    public  void getFrmLivenessVoice(){
+    public void getFrmLivenessVoice(IMessageListener listener) {
 
-        gwrapper_tools.Show_Wizard(PublicVals.enmWizardForms.frmLivenessVoice, "", "","","");
+        gwrapper_tools.Show_Wizard(PublicVals.enmWizardForms.frmLivenessVoice, "", "", "", "");
 
 
+    }
+
+    public void setOtherWebServiceParams(String[] firstParam, String[] secondParam, IMessageListener listener) {
+
+        gwrapper_tools.setOtherWebServiceParams(firstParam, secondParam);
     }
 
 
@@ -74,10 +82,9 @@ public class FaceDetection {
         //برای دریافت یک فریم مناسب از ویدئو و ارسال به وب سرویس شباهت میتوانید از تابع زیر استفاده کنید
 
         gwrapper_tools.getSimapleFrame();
-        if ((Value == Gata_EventListener.enmResult.Success) || (Value == Gata_EventListener.enmResult.FaceVerification_VerifySuccess)){
+        if ((Value == Gata_EventListener.enmResult.Success) || (Value == Gata_EventListener.enmResult.FaceVerification_VerifySuccess)) {
 
-        }
-        else {
+        } else {
             //Error Or Fake Video
         }
     }

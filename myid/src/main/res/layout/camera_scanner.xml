@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/wholeview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/camPreview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+
+    <RelativeLayout
+        android:id="@+id/Pnl1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/VoiceCloseFrame"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="1dp"
+            android:onClick="onClickCardBack"
+            android:scaleType="fitXY"
+            android:src="@drawable/btnback" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:color="#FFFFFF"
+            android:gravity="center"
+            android:keepScreenOn="true"
+            android:text="Card scan"
+            android:textColor="#090563"
+            android:textSize="30sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/capture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <SurfaceView
+            android:id="@+id/surfaceView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/camera_preview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/upperview"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#55000000"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:lineSpacingExtra="8dp"
+                    android:padding="24dp"
+                    android:paddingBottom="0dp"
+                    android:text="Hold your card in the box"
+                    android:textStyle="bold"
+                    android:textColor="#fff"
+                    android:textSize="25dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/MidView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/MidLeftView"
+                    android:layout_width="35dp"
+                    android:layout_height="match_parent"
+                    android:background="#55000000"
+                    android:orientation="horizontal" />
+
+
+                <LinearLayout
+                    android:id="@+id/fucosview"
+                    android:layout_width="330dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rectangle"
+
+                    android:gravity="right|bottom"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:scaleType="centerCrop"
+                        android:onClick="onclick_flash"
+                        android:src="@drawable/ic_flash" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/MidRigthView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#55000000"
+                    android:orientation="horizontal"></LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/lowerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#55000000"
+                android:gravity="bottom|center"
+                android:orientation="horizontal">
+
+
+            <ImageView
+                    android:id="@+id/imgLogo"
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="5dp"
+                    android:onClick="onclick_Cardwebsite"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/plogo" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -6,8 +6,10 @@ import android.os.Bundle;
 
 import com.balvin.myid.Constants;
 import com.balvin.myid.FaceDetection;
+import com.balvin.myid.IMessageListener;
 
 public class MainActivity extends AppCompatActivity {
+
 
 
     @Override
@@ -17,7 +19,17 @@ public class MainActivity extends AppCompatActivity {
 
         FaceDetection faceDetection= new FaceDetection(this,"");
 
-        faceDetection.getLiveNess();
+        faceDetection.getLiveNess(new IMessageListener() {
+            @Override
+            public void onSuccess(Object responseMessage) {
+
+            }
+
+            @Override
+            public void onFailure(String errorResponseMessage) {
+
+            }
+        });
 
 
 
